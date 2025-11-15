@@ -27,30 +27,30 @@ bu değer pikselden piksele değişir.
 
 typedef struct s_complex
 {
-    double  re;
-    double  im;
+	double  re;
+	double  im;
 }               t_complex;
 
 typedef struct s_image // bellek tabanli goruntu sistemini yonetir
 {
-    void    *img_ptr;
-    char    *addr; // pixel verisinin bellek adresi
-    int     bpp;    // bits per pixel
-    int     line_len; // byte olarak satır uzunlugu
-    int     endian; //  byte order (little/big endian)
+	void    *img_ptr;
+	char    *addr; // pixel verisinin bellek adresi
+	int     bpp;    // bits per pixel
+	int     line_len; // byte olarak satır uzunlugu
+	int     endian; //  byte order (little/big endian)
 }               t_image;
 
 typedef struct s_fractol
 {
-    void        *mlx;       // mlx_init() sonucu, baglanti handlei
-    void        *win;       // mlx_new_window() sonucu, pencere handlei
-    t_image       img;        // görüntü verileri, buffer
-    char        *fractal_name;
-    double      min_re; // sol
-    double      max_re; // sağ
-    double      min_im; // alt
-    double      max_im; // üst
-    t_complex   julia_c; // c = julia_c.re + julia_c.im·i
+	void        *mlx;       // mlx_init() sonucu, baglanti handlei
+	void        *win;       // mlx_new_window() sonucu, pencere handlei
+	t_image       img;        // görüntü verileri, buffer
+	char        *fractal_name;
+	double      min_re; // sol
+	double      max_re; // sağ
+	double      min_im; // alt
+	double      max_im; // üst
+	t_complex   julia_c; // c = julia_c.re + julia_c.im·i
 }               t_fractol;
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
