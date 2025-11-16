@@ -4,7 +4,7 @@
 
 static void	print_right_usage_and_exit(void)
 {
-	ft_putstr("right usage: ./fractol <frcl_name> [julia_re] [julia_im]\n");
+	ft_putstr("right usage: ./fractol_bonus <frcl_name> [julia_re] [julia_im]\n");
 	ft_putstr("available fractals:\n");
 	ft_putstr("  - mandelbrot\n");
 	ft_putstr("  - julia <C_re> <C_im>\n");
@@ -37,12 +37,10 @@ int	main(int argc, char **argv)
 
 	if (!parse_arguments(argc, argv, &f))
 		return (1);
-	f.color_scheme = 0;
-	f.max_iter = BASE_MAX_ITER;
 	if (!init_mlx(&f))
 		return (1);
-	draw_fractal_threaded(&f);
 	mlx_hooks(&f);
+	draw_fractal(&f);
 	mlx_loop(f.mlx);
 	return (0);
 }

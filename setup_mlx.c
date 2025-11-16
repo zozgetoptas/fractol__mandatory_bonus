@@ -42,5 +42,5 @@ void	mlx_hooks(t_fractol *f)
 {
 	mlx_key_hook(f->win, is_esc, f);
 	mlx_hook(f->win, 17, 0, destroy_and_exit, f);
-	mlx_mouse_hook(f->win, \ (int (*)(int , int , int , void * ))mouse_scroll, f);
+	mlx_mouse_hook(f->win, (int (*)(int , int , int , void * ))mouse_scroll, f);
 }

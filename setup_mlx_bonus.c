@@ -7,6 +7,8 @@ void	init_map_params(t_fractol *f)
 	f->max_re = 2.0;
 	f->min_im = -2.0;
 	f->max_im = 2.0;
+	f->max_iter = BASE_MAX_ITER;
+	f->color_scheme = 0;
 }
 
 int	init_mlx(t_fractol *f)

@@ -60,6 +60,7 @@ int	mouse_scroll(int button, int x, int y, t_fractol *f)
 	double	center_im;
 	double	width;
 	double	height;
+	double	min_width;
 
 	(void)x;
 	(void)y;
@@ -73,6 +74,11 @@ int	mouse_scroll(int button, int x, int y, t_fractol *f)
 		zoom_factor = 1.25;
 	width = (f->max_re - f->min_re) * zoom_factor;
 	height = (f->max_im - f->min_im) * zoom_factor;
+	min_width = 1e-10;
+	if (width < min_width)
+		width = min_width;
+	if (height < min_width)
+		height = min_width;
 	f->min_re = center_re - width / 2.0;
 	f->max_re = center_re + width / 2.0;
 	f->min_im = center_im - height / 2.0;

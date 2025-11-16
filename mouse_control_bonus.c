@@ -34,12 +34,8 @@ int	mouse_zoom(int button, int x, int y, t_fractol *f)
 	re_range = (f->max_re - f->min_re) * zoom_factor;
 	im_range = (f->max_im - f->min_im) * zoom_factor;
 	update_zoom_bounds(f, mouse_re, mouse_im, re_range, im_range, x, y);
-	f->max_iter = (int)(BASE_MAX_ITER / (4.0 / (f->max_re - f->min_re)));
-	if (f->max_iter < 0)
-		f->max_iter = 0;
-	printf("Zoom: %.2fx | Max iterations: %d\n",
-		4.0 / (f->max_re - f->min_re), f->max_iter);
-	draw_fractal_threaded(f);
+	printf("Zoom: %.2fx\n", 4.0 / (f->max_re - f->min_re));
+	draw_fractal(f);
 	return (0);
 }
 
@@ -48,14 +44,14 @@ static void	handle_color_and_reset(int keycode, t_fractol *f)
 	if (keycode == 99)
 	{
 		f->color_scheme = (f->color_scheme + 1) % 4;
-		draw_fractal_threaded(f);
+		draw_fractal(f);
 	}
 	if (keycode == 114)
 	{
 		init_map_params(f);
 		f->max_iter = BASE_MAX_ITER;
 		f->color_scheme = 0;
-		draw_fractal_threaded(f);
+		draw_fractal(f);
 	}
 }
 
@@ -91,7 +87,7 @@ int	key_move(int keycode, t_fractol *f)
 	shift = (f->max_re - f->min_re) * 0.1;
 	move_view(keycode, f, shift);
 	if (keycode >= 65361 && keycode <= 65364)
-		draw_fractal_threaded(f);
+		draw_fractal(f);
 	return (0);
 }
 
@@ -101,6 +97,6 @@ int	mouse_move_julia(int x, int y, t_fractol *f)
 		return (0);
 	f->julia_c.re = (x - WIDTH / 2.0) / (WIDTH / 4.0);
 	f->julia_c.im = (y - HEIGHT / 2.0) / (HEIGHT / 4.0);
-	draw_fractal_threaded(f);
+	draw_fractal(f);
 	return (0);
 }

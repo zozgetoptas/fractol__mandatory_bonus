@@ -1,12 +1,12 @@
 NAME = fractol
 NAME_BONUS = fractol_bonus
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -O3 -pthread
+CFLAGS = -Wall -Wextra -Werror -O3
 
 MLX_DIR = minilibx-linux
 MLX_LIB = $(MLX_DIR)/libmlx.a
 
-LIBS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -pthread
+LIBS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 INCLUDES = -I. -I$(MLX_DIR)
 
 # Main source files
@@ -21,8 +21,7 @@ BONUS_SRCS = setup_mlx_bonus.c \
 			 math_utils_bonus.c \
 			 libft_stuff_bonus.c \
 			 main_bonus.c \
-			 drawing_fractal.c \
-			 multi_threading_bonus.c \
+			 drawing_fractal_bonus.c \
 			 mouse_control_bonus.c
 
 # Object files
