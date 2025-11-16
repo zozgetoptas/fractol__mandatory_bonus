@@ -2,7 +2,6 @@
 # define FRACTOL_H
 
 #include <stddef.h>
-#include <pthread.h>
 #include "mlx.h"
 
 #define WIDTH 600

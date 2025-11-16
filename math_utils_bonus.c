@@ -1,4 +1,4 @@
-#include "fractol_bonus.h" // 3 func.
+#include "fractol_bonus.h" // 4 func.
 
 int	adaptive_max_iter(t_fractol *f)
 {

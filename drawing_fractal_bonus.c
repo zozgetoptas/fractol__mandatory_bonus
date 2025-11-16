@@ -1,43 +1,43 @@
-#include "fractol_bonus.h"
+#include "fractol_bonus.h" // 5 func
+
+static void	get_rgb_by_scheme(int scheme, double t, int *rgb)
+{
+	if (scheme == 0)
+	{
+		rgb[0] = (int)(9 * t * 255) % 256;
+		rgb[1] = (int)(15 * t * 255) % 256;
+		rgb[2] = (int)(30 * t * 255) % 256;
+	}
+	else if (scheme == 1)
+	{
+		rgb[0] = (int)(8 * t * 255) % 256;
+		rgb[1] = (int)(18 * t * 255) % 256;
+		rgb[2] = (int)(25 * t * 255) % 256;
+	}
+	else if (scheme == 2)
+	{
+		rgb[0] = (int)(12 * t * 255) % 256;
+		rgb[1] = (int)(20 * t * 255) % 256;
+		rgb[2] = (int)(28 * t * 255) % 256;
+	}
+	else
+	{
+		rgb[0] = (int)(10 * t * 255) % 256;
+		rgb[1] = (int)(16 * t * 255) % 256;
+		rgb[2] = (int)(22 * t * 255) % 256;
+	}
+}
 
 static int	get_color(int iter, int max_iter, int scheme)
 {
-	int		r;
-	int		g;
-	int		b;
+	int		rgb[3];
 	double	t;
 
 	if (iter == max_iter)
 		return (0x000000);
 	t = (double)iter / max_iter;
-	if (scheme == 0)
-	{
-		r = (int)(9 * t * 255) % 256;
-		g = (int)(15 * t * 255) % 256;
-		b = (int)(30 * t * 255) % 256;
-	}
-	else if (scheme == 1)
-	{
-		// Parlak rainbow palette
-		r = (int)(8 * t * 255) % 256;
-		g = (int)(18 * t * 255) % 256;
-		b = (int)(25 * t * 255) % 256;
-	}
-	else if (scheme == 2)
-	{
-		// Deniz-Okyanus palette (cyan-blue-purple)
-		r = (int)(12 * t * 255) % 256;
-		g = (int)(20 * t * 255) % 256;
-		b = (int)(28 * t * 255) % 256;
-	}
-	else
-	{
-		// Ateş-Güneş palette (orange-yellow-red)
-		r = (int)(10 * t * 255) % 256;
-		g = (int)(16 * t * 255) % 256;
-		b = (int)(22 * t * 255) % 256;
-	}
-	return ((r << 16) | (g << 8) | b);
+	get_rgb_by_scheme(scheme, t, rgb);
+	return ((rgb[0] << 16) | (rgb[1] << 8) | rgb[2]);
 }
 
 static void	put_pixel(t_fractol *f, int x, int y, int color)

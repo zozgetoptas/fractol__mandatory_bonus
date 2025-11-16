@@ -1,4 +1,4 @@
-#include "fractol_bonus.h"
+#include "fractol_bonus.h" //  6 func
 #include <stdio.h>
 
 static void	calculate_zoom_range(int button, double *factor)
@@ -39,22 +39,6 @@ int	mouse_zoom(int button, int x, int y, t_fractol *f)
 	return (0);
 }
 
-static void	handle_color_and_reset(int keycode, t_fractol *f)
-{
-	if (keycode == 99)
-	{
-		f->color_scheme = (f->color_scheme + 1) % 4;
-		draw_fractal(f);
-	}
-	if (keycode == 114)
-	{
-		init_map_params(f);
-		f->max_iter = BASE_MAX_ITER;
-		f->color_scheme = 0;
-		draw_fractal(f);
-	}
-}
-
 static void	move_view(int keycode, t_fractol *f, double shift)
 {
 	if (keycode == 65361)
@@ -77,16 +61,21 @@ static void	move_view(int keycode, t_fractol *f, double shift)
 		f->min_im += shift;
 		f->max_im += shift;
 	}
+	else if (keycode == 99)
+	{
+		f->color_scheme = (f->color_scheme + 1) % 4;
+	}
 }
 
 int	key_move(int keycode, t_fractol *f)
 {
 	double	shift;
 
-	handle_color_and_reset(keycode, f);
 	shift = (f->max_re - f->min_re) * 0.1;
 	move_view(keycode, f, shift);
 	if (keycode >= 65361 && keycode <= 65364)
+		draw_fractal(f);
+	else if (keycode == 99)
 		draw_fractal(f);
 	return (0);
 }

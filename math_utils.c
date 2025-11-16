@@ -1,4 +1,4 @@
-#include "fractol.h"
+#include "fractol.h" // 3 func
 
 int	julia_iter(t_complex z, t_complex c)
 {

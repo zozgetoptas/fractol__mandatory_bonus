@@ -22,7 +22,8 @@ BONUS_SRCS = setup_mlx_bonus.c \
 			 libft_stuff_bonus.c \
 			 main_bonus.c \
 			 drawing_fractal_bonus.c \
-			 mouse_control_bonus.c
+			 mouse_zoom_bonus.c \
+			 mouse_move_bonus.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)

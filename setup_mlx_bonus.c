@@ -24,7 +24,7 @@ int	init_mlx(t_fractol *f)
 	}
 	f->img.img_ptr = mlx_new_image(f->mlx, WIDTH, HEIGHT);
 	f->img.addr = mlx_get_data_addr(f->img.img_ptr, &f->img.bpp,
-		&f->img.line_len, &f->img.endian);
+			&f->img.line_len, &f->img.endian);
 	init_map_params(f);
 	return (1);
 }

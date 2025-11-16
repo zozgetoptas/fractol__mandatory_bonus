@@ -4,7 +4,8 @@
 
 static void	print_right_usage_and_exit(void)
 {
-	ft_putstr("right usage: ./fractol_bonus <frcl_name> [julia_re] [julia_im]\n");
+	ft_putstr("right usage: ./fractol_bonus ");
+	ft_putstr("<frcl_name> [julia_re] [julia_im]\n");
 	ft_putstr("available fractals:\n");
 	ft_putstr("  - mandelbrot\n");
 	ft_putstr("  - julia <C_re> <C_im>\n");
