@@ -1,4 +1,5 @@
 #include "fractol_bonus.h"
+#include <stdlib.h>
 
 static void	move_view(int keycode, t_fractol *f, double shift)
 {
@@ -34,9 +35,7 @@ int	key_move(int keycode, t_fractol *f)
 
 	shift = (f->max_re - f->min_re) * 0.1;
 	move_view(keycode, f, shift);
-	if (keycode >= 65361 && keycode <= 65364)
-		draw_fractal(f);
-	else if (keycode == 99)
+	if ((keycode >= 65361 && keycode <= 65364) || keycode == 99)
 		draw_fractal(f);
 	return (0);
 }

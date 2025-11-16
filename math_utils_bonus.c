@@ -1,12 +1,4 @@
-#include "fractol_bonus.h" // 4 func.
-
-int	adaptive_max_iter(t_fractol *f)
-{
-	double	zoom_level;
-
-	zoom_level = 4.0 / (f->max_re - f->min_re);
-	return ((int)(100 + zoom_level * 50));
-}
+#include "fractol_bonus.h" // 3 func.
 
 int	julia_iter(t_complex z, t_complex c, int max_iter)
 {

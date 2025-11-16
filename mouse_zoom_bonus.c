@@ -23,7 +23,6 @@ int	mouse_zoom(int button, int x, int y, t_fractol *f)
 	f->max_re = f->min_re + re_range;
 	f->min_im = mouse_im - im_range * y / (double)HEIGHT;
 	f->max_im = f->min_im + im_range;
-	printf("Zoom: %.2fx\n", 4.0 / (f->max_re - f->min_re));
 	draw_fractal(f);
 	return (0);
 }

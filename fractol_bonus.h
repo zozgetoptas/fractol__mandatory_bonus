@@ -48,7 +48,6 @@ typedef struct s_thread_data
 	int         end_y;
 }   t_thread_data;
 
-int adaptive_max_iter(t_fractol *f);
 void init_map_params(t_fractol *f);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 double  ft_atof(const char *str);

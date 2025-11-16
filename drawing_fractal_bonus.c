@@ -1,4 +1,4 @@
-#include "fractol_bonus.h" // 5 func
+#include "fractol_bonus.h"
 
 static void	get_rgb_by_scheme(int scheme, double t, int *rgb)
 {

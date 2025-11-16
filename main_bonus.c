@@ -1,4 +1,4 @@
-#include "fractol_bonus.h" // 3 func
+#include "fractol_bonus.h"
 #include <unistd.h>
 #include <stdlib.h>
 

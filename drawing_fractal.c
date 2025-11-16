@@ -1,4 +1,4 @@
-#include "fractol.h" // 5 func
+#include "fractol.h"
 
 static int	get_color(int iter, int max_iter)
 {
@@ -30,7 +30,7 @@ int	draw_fractal(t_fractol *f)
 	int			y;
 	int			iter;
 	int			final_color;
-	t_complex	c;
+	t_complex	z;
 
 	y = -1;
 	while (++y < HEIGHT)
@@ -38,13 +38,13 @@ int	draw_fractal(t_fractol *f)
 		x = -1;
 		while (++x < WIDTH)
 		{
-			c.re = f->min_re + (f->max_re - f->min_re) * x / WIDTH;
-			c.im = f->min_im + (f->max_im - f->min_im) * y / HEIGHT;
+			z.re = f->min_re + (f->max_re - f->min_re) * x / WIDTH;
+			z.im = f->min_im + (f->max_im - f->min_im) * y / HEIGHT;
 			iter = 0;
 			if (ft_strncmp(f->fractal_name, "mandelbrot", 11) == 0)
-				iter = mandelbrot_iter(c);
+				iter = mandelbrot_iter(z);
 			else if (ft_strncmp(f->fractal_name, "julia", 6) == 0)
-				iter = julia_iter(c, f->julia_c);
+				iter = julia_iter(z, f->julia_c);
 			final_color = get_color(iter, MAX_ITER);
 			put_pixel(f, x, y, final_color);
 		}
@@ -85,9 +85,9 @@ int	mouse_scroll(int button, int x, int y, t_fractol *f)
 	if (button != 4 && button != 5)
 		return (0);
 	if (button == 4)
-		zoom_factor = 0.8;
+		zoom_factor = 0.9;
 	else
-		zoom_factor = 1.25;
+		zoom_factor = 1.1;
 	calculate_new_bounds(f, zoom_factor);
 	draw_fractal(f);
 	return (0);

@@ -9,14 +9,12 @@ MLX_LIB = $(MLX_DIR)/libmlx.a
 LIBS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 INCLUDES = -I. -I$(MLX_DIR)
 
-# Main source files
 SRCS = setup_mlx.c \
 	   math_utils.c \
 	   libft_stuff.c \
 	   main.c \
 	   drawing_fractal.c
 
-# Bonus source files (complete separate set)
 BONUS_SRCS = setup_mlx_bonus.c \
 			 math_utils_bonus.c \
 			 libft_stuff_bonus.c \
@@ -25,7 +23,6 @@ BONUS_SRCS = setup_mlx_bonus.c \
 			 mouse_zoom_bonus.c \
 			 mouse_move_bonus.c
 
-# Object files
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 

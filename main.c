@@ -1,5 +1,4 @@
-#include "fractol.h" // 3 func
-#include <unistd.h>
+#include "fractol.h"
 #include <stdlib.h>
 
 static void	print_right_usage_and_exit(void)
