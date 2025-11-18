@@ -3,30 +3,28 @@
 
 static void	move_view(int keycode, t_fractol *f, double shift)
 {
-	if (keycode == 65361)
+	if (keycode == KEY_LEFT)
 	{
 		f->min_re -= shift;
 		f->max_re -= shift;
 	}
-	else if (keycode == 65363)
+	else if (keycode == KEY_RIGHT)
 	{
 		f->min_re += shift;
 		f->max_re += shift;
 	}
-	else if (keycode == 65362)
+	else if (keycode == KEY_UP)
 	{
 		f->min_im -= shift;
 		f->max_im -= shift;
 	}
-	else if (keycode == 65364)
+	else if (keycode == KEY_DOWN)
 	{
 		f->min_im += shift;
 		f->max_im += shift;
 	}
-	else if (keycode == 99)
-	{
+	else if (keycode == KEY_C)
 		f->color_scheme = (f->color_scheme + 1) % 4;
-	}
 }
 
 int	key_move(int keycode, t_fractol *f)
@@ -35,7 +33,7 @@ int	key_move(int keycode, t_fractol *f)
 
 	shift = (f->max_re - f->min_re) * 0.1;
 	move_view(keycode, f, shift);
-	if ((keycode >= 65361 && keycode <= 65364) || keycode == 99)
+	if ((keycode >= KEY_LEFT && keycode <= KEY_DOWN) || keycode == KEY_C)
 		draw_fractal(f);
 	return (0);
 }

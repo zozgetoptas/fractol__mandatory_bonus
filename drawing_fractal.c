@@ -82,9 +82,9 @@ int	mouse_scroll(int button, int x, int y, t_fractol *f)
 
 	(void)x;
 	(void)y;
-	if (button != 4 && button != 5)
+	if (button != MOUSE_SCROLL_UP && button != MOUSE_SCROLL_DOWN)
 		return (0);
-	if (button == 4)
+	if (button == MOUSE_SCROLL_UP)
 		zoom_factor = 0.9;
 	else
 		zoom_factor = 1.1;

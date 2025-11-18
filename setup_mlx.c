@@ -28,12 +28,17 @@ int	destroy_and_exit(t_fractol *f)
 		mlx_destroy_image(f->mlx, f->img.img_ptr);
 	if (f->win)
 		mlx_destroy_window(f->mlx, f->win);
+	if (f->mlx)
+    {
+        mlx_destroy_display(f->mlx);
+        free(f->mlx);
+    }
 	exit(0);
 }
 
 int	is_esc(int keycode, t_fractol *f)
 {
-	if (keycode == 65307)
+	if (keycode == KEY_ESC)
 		destroy_and_exit(f);
 	return (0);
 }

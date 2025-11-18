@@ -1,12 +1,23 @@
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 #include <stddef.h>
 #include "mlx.h"
 
 #define WIDTH 600
 #define HEIGHT 600
-#define BASE_MAX_ITER 256
+#define BASE_MAX_ITER 50
+
+#define KEY_ESC     65307
+#define KEY_LEFT    65361
+#define KEY_UP      65362
+#define KEY_RIGHT   65363
+#define KEY_DOWN    65364
+#define KEY_C       99
+
+#define MOUSE_SCROLL_UP     4
+#define MOUSE_SCROLL_DOWN   5
+
 
 typedef struct s_complex
 {
@@ -38,15 +49,6 @@ typedef struct s_fractol
 	int         color_scheme; // Renk paleti (0, 1, 2, ...)
 }               t_fractol;
 
-
-#define NUM_THREADS 4  // Thread sayısı
-
-typedef struct s_thread_data
-{
-	t_fractol   *f;
-	int         start_y;
-	int         end_y;
-}   t_thread_data;
 
 void init_map_params(t_fractol *f);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);

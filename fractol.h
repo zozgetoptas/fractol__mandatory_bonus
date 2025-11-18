@@ -8,22 +8,10 @@
 #define HEIGHT 600
 #define MAX_ITER 100
 
-// mendelbrot
-// z(n+1) = z(n)² + c
-/* Her bir pikselin kümenin bir parçası olup olmadığını test etmek için,
-z0 başlangıç değeri sıfır (0) olarak sabit tutulur.
-Formüldeki c sabiti ise, test edilen pikselin karmaşık düzlemdeki koordinatlarını temsil eder
-ve bu değer pikselden piksele değişir.
-*/
+#define KEY_ESC 65307
 
-// julia
-// z(n+1) = z(n)² + c
-/* burada, formüldeki c sabiti, tüm fraktal için dışarıdan belirlenen sabit bir parametre
-olarak kullanılır ve fraktalın şeklini belirler.
-İterasyonun başlangıç değeri olan z0 ise,
-test edilen pikselin karmaşık düzlemdeki koordinatlarını temsil eder ve
-bu değer pikselden piksele değişir.
-*/
+#define MOUSE_SCROLL_UP     4
+#define MOUSE_SCROLL_DOWN   5
 
 typedef struct s_complex
 {
