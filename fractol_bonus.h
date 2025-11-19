@@ -16,8 +16,8 @@
 # include <stddef.h>
 # include "mlx.h"
 
-# define WIDTH 600
-# define HEIGHT 600
+# define WIDTH 900
+# define HEIGHT 900
 # define BASE_MAX_ITER 50
 
 # define KEY_ESC     65307
