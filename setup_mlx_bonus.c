@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   setup_mlx_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ztoptas <ztoptas@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/19 08:31:31 by ztoptas           #+#    #+#             */
+/*   Updated: 2025/11/19 08:31:31 by ztoptas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol_bonus.h"
 #include <stdlib.h>
 
@@ -36,10 +48,10 @@ int	destroy_and_exit(t_fractol *f)
 	if (f->win)
 		mlx_destroy_window(f->mlx, f->win);
 	if (f->mlx)
-    {
-        mlx_destroy_display(f->mlx);
-        free(f->mlx);
-    }
+	{
+		mlx_destroy_display(f->mlx);
+		free(f->mlx);
+	}
 	exit(0);
 }
 

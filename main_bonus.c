@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ztoptas <ztoptas@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/19 08:31:17 by ztoptas           #+#    #+#             */
+/*   Updated: 2025/11/19 08:31:17 by ztoptas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol_bonus.h"
-#include <unistd.h>
 #include <stdlib.h>
 
 static void	print_right_usage_and_exit(void)

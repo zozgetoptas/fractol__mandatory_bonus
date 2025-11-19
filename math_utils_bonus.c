@@ -1,4 +1,16 @@
-#include "fractol_bonus.h" // 3 func.
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   math_utils_bonus.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ztoptas <ztoptas@student.42kocaeli.com.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/19 08:31:21 by ztoptas           #+#    #+#             */
+/*   Updated: 2025/11/19 08:31:21 by ztoptas          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fractol_bonus.h"
 
 int	julia_iter(t_complex z, t_complex c, int max_iter)
 {
